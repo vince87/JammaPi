@@ -1,0 +1,13 @@
+[Unit]
+Description=JammaPi Joystick service
+After=network.target
+
+[Service]
+User=pi
+Type=simple
+ExecStart=/home/pi/JammaPi/script/interfaccia.sh -JSON
+#ExecStart=/home/pi/JammaPi/script/interfaccia.sh -JSON 2>&1 >> /home/pi/JammaPi/jammapi.log
+ExecStop=/home/pi/JammaPi/script/interfaccia.sh -JSOFF
+
+[Install]
+WantedBy=multi-user.target
