@@ -138,6 +138,14 @@ chmod +x install.sh
 		ln -s /home/pi/JammaPi/script/runcommand-onstart.sh /opt/retropie/configs/all/runcommand-onstart.sh
 		ln -s /home/pi/JammaPi/script/vertical_list.txt /opt/retropie/configs/all/vertical_list.txt
 		ln -s /home/pi/JammaPi/script/exceptions_list.txt /opt/retropie/configs/all/exceptions_list.txt
+		sudo grep 'crt_switch_resolution' /etc/fstab > /dev/null 2>&1
+		if [ $? -eq 0 ] ; then
+			echo "Già modificato!"
+		else
+		sudo sh -c "echo 'crt_switch_resolution = "0"' >> /opt/retropie/configs/all/retroarch.cfg"
+		sudo sh -c "echo 'crt_switch_resolution_super = "0"' >> /opt/retropie/configs/all/retroarch.cfg"
+		echo "Modulo impostato!"
+		fi
 		sleep 2
 
 		
