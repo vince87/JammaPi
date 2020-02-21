@@ -6,6 +6,7 @@
 
   printf "\033[1;31m Attivo Driver Joystick \033[0m\n"
   
+  sudo modprobe joypi
   lsmod | grep 'joypi' > /dev/null 2>&1
   if [ $? -eq 0 ] ; then
   	sudo modprobe joypi
