@@ -9,7 +9,7 @@
   sudo modprobe joypi
   lsmod | grep 'joypi' > /dev/null 2>&1
   if [ $? -eq 0 ] ; then
-  	sudo modprobe joypi
+  	echo "Modulo abilitato!"
   else
   	cd ~/JammaPi/joypi/
 	make
