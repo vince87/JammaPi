@@ -142,8 +142,8 @@ chmod +x install.sh
 		if [ $? -eq 0 ] ; then
 			echo "Già modificato!"
 		else
-		sudo sh -c "echo 'crt_switch_resolution = "0"' >> /opt/retropie/configs/all/retroarch.cfg"
-		sudo sh -c "echo 'crt_switch_resolution_super = "0"' >> /opt/retropie/configs/all/retroarch.cfg"
+		sudo sh -c "echo 'crt_switch_resolution = \"0\"' >> /opt/retropie/configs/all/retroarch.cfg"
+		sudo sh -c "echo 'crt_switch_resolution_super = \"0\"' >> /opt/retropie/configs/all/retroarch.cfg"
 		echo "Modulo impostato!"
 		fi
 		sleep 2
