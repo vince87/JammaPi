@@ -101,7 +101,7 @@ chmod +x install.sh
 	chmod u+x ~/JammaPi/script/jammapi.sh
 	sudo ln -s /home/pi/JammaPi/services/jammapi.service /etc/systemd/system/jammapi.service
 	sudo ln -s /home/pi/JammaPi/services/jammapi_joystick.service /etc/systemd/system/jammapi_joystick.service
-	systemctl daemon-reload
+	sudo systemctl daemon-reload
 	sudo systemctl enable jammapi.service
 	sudo systemctl start jammapi.service &
 	sudo systemctl enable jammapi_joystick.service
