@@ -5,6 +5,6 @@ dialog --title "Versione JammaPi" \
 
 response=$?
 case $response in
-   0) mv JammaPi/script/jammapi_new.sh JammaPi/script/jammapi.sh
-   1) mv JammaPi/script/jammapi_old.sh JammaPi/script/jammapi.sh
+   0) cp ~/JammaPi/script/jammapi_new.sh ~/JammaPi/script/jammapi.sh;;
+   1) cp ~/JammaPi/script/jammapi_old.sh ~/JammaPi/script/jammapi.sh;;
 esac
