@@ -55,7 +55,7 @@ if [ $plex1 = 0 ] && [ $plex2 = 0 ]; then
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
     sleep 5
-    #sudo reboot
+    sudo reboot
   fi
 fi
 
@@ -66,7 +66,7 @@ if [ $plex1 = 0 ] && [ $plex2 = 1 ]; then
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
     sleep 5
-    #sudo reboot
+    sudo reboot
   fi
 fi
 
@@ -78,7 +78,7 @@ then
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
     sleep 5
-    #sudo reboot
+    sudo reboot
   fi
 fi
 
