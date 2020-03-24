@@ -51,6 +51,8 @@ plex2=$(gpio read 12)
 if [ $plex1 = 0 ] && [ $plex2 = 0 ]; then
   echo "JAMMA/SCART"
   if [ $current != 0 ]; then
+    sudo perl -p -i -e 's/#VGA/#CRT/g' /boot/config.txt
+    sudo perl -p -i -e 's/#HDMI/#CRT/g' /boot/config.txt
     bash /home/pi/JammaPi/script/interfaccia.sh -JAMMA
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
@@ -62,6 +64,8 @@ fi
 if [ $plex1 = 0 ] && [ $plex2 = 1 ]; then
   echo "VGA"
   if [ $current != 1 ]; then
+    sudo perl -p -i -e 's/#CRT/#VGA/g' /boot/config.txt
+    sudo perl -p -i -e 's/#HDMI/#VGA/g' /boot/config.txt
     bash /home/pi/JammaPi/script/interfaccia.sh -VGA
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
@@ -73,7 +77,9 @@ fi
 if [ $plex1 = 1 ] && [ $plex2 = 0 ]
 then
   echo "HDMI"
-  if [ $current != 2 ]; then 
+  if [ $current != 2 ]; then
+    sudo perl -p -i -e 's/#CRT/#HDMI/g' /boot/config.txt
+    sudo perl -p -i -e 's/#VGA/#HDMI/g' /boot/config.txt
     bash /home/pi/JammaPi/script/interfaccia.sh -HDMI
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
@@ -98,3 +104,6 @@ fi
   else
     printf "\033[0;32m Skip! \033[0m\n"
   fi
+
+
+
