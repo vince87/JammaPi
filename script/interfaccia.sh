@@ -46,6 +46,8 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/hdmi_timings=/#hdmi_timings=/g' /boot/config.txt
 			bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
 			bash /home/pi/JammaPi/script/pixelperfect.sh -off
+			sudo perl -p -i -e 's/#CRT/#VGA/g' /boot/config.txt
+    			sudo perl -p -i -e 's/#HDMI/#VGA/g' /boot/config.txt
 			printf "\033[0;32m !!!SPOSTARE I 2 DIP SWITCH SU OFF!!! \033[0m\n"
 			sleep 5
             ;;
@@ -64,6 +66,8 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/hdmi_timings=/#hdmi_timings=/g' /boot/config.txt
 			bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
 			bash /home/pi/JammaPi/script/pixelperfect.sh -off
+			sudo perl -p -i -e 's/#VGA/#HDMI/g' /boot/config.txt
+   			sudo perl -p -i -e 's/#CRT/#HDMI/g' /boot/config.txt
 			sleep 5
             ;;
 		-SCART | -JAMMA)
@@ -83,6 +87,8 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/#hdmi_timings=/hdmi_timings=/g' /boot/config.txt
 			bash /home/pi/JammaPi/script/pixelperfect.sh -runc-on
 			bash /home/pi/JammaPi/script/pixelperfect.sh -on
+			sudo perl -p -i -e 's/#VGA/#CRT/g' /boot/config.txt
+    			sudo perl -p -i -e 's/#HDMI/#CRT/g' /boot/config.txt
 			printf "\033[0;32m !!!SPOSTARE I 2 DIP SWITCH SU ON!!! \033[0m\n"
 			sleep 5
             ;;
