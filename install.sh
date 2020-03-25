@@ -167,6 +167,7 @@ chmod +x install.sh
 		
   ##Choice of video output
   		bash ~/JammaPi/script/jammapi_version.sh
+		chmod u+x ~/JammaPi/script/jammapi.sh
 		bash ~/JammaPi/script/switchvideo.sh 1
 		
     		printf "\033[0;32m !!!INSTALLAZIONE COMPLETATA!!! \033[0m\n"
