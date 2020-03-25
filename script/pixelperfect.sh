@@ -26,10 +26,18 @@ while [ "$1" != "" ]; do
             exit
             ;;
         -on)
-			printf "\033[1;31m Attivo il Pixel-Perfect per la JammaPi \033[0m\n"
-			sudo perl -p -i -e 's/crt_switch_resolution = "0"/crt_switch_resolution = "1"/g' /opt/retropie/configs/all/retroarch.cfg
-			sudo perl -p -i -e 's/crt_switch_resolution_super = "0"/crt_switch_resolution_super = "1920"/g' /opt/retropie/configs/all/retroarch.cfg
-			sleep 2
+	
+	
+	
+			sudo grep 'Pi 4' /proc/device-tree/model > /dev/null 2>&1 
+			if [ $? -eq 0 ] ; then
+        			echo "ERRORE: Impossibile attivare il pixel perfect su pi4 al momento!"
+			else
+				printf "\033[1;31m Attivo il Pixel-Perfect per la JammaPi \033[0m\n"
+				sudo perl -p -i -e 's/crt_switch_resolution = "0"/crt_switch_resolution = "1"/g' /opt/retropie/configs/all/retroarch.cfg
+				sudo perl -p -i -e 's/crt_switch_resolution_super = "0"/crt_switch_resolution_super = "1920"/g' /opt/retropie/configs/all/retroarch.cfg
+				sleep 2
+			fi
             ;;
 	 -on31)
 			printf "\033[1;31m Attivo il Pixel-Perfect per la JammaPi \033[0m\n"
