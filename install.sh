@@ -17,6 +17,9 @@ lsmod | grep 'joypi' > /dev/null 2>&1
   	echo "Kernel ok!"
   else
   	sudo apt-get install --reinstall -y raspberrypi-bootloader raspberrypi-kernel raspberrypi-kernel-headers
+	cd /tmp
+	wget https://project-downloads.drogon.net/wiringpi-latest.deb
+	sudo dpkg -i wiringpi-latest.deb
   fi
 git clone https://github.com/vince87/JammaPi.git
 cd ~/JammaPi
