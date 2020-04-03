@@ -1,14 +1,11 @@
 #!/bin/bash
 ########################################################
-## Vincenzo Bini 22/09/2019
-## Versione 1.0
+## Vincenzo Bini 03/04/2020
+## Versione 1.1
 #########################################################
 
-
-dialog --title "Script installazione JammaPi" --msgbox "Attenzione verranno ora installati i driver per il corretto funzionamento della Jammapi.
-\n \nSe stai usando un immagine custom, non scaricata da retropie.org.uk, accertati di aver disattivato tutti gli script che usano i GPIO.
-\n \nTerminata l'installazione ti verrà chiesto che uscita video abilitare! " 14 60
-
+sudo apt-get update
+sudo apt-get install -y git libjpeg-dev dialog
 cd ~
 git clone https://github.com/vince87/JammaPi.git
 cd ~/JammaPi
@@ -16,8 +13,10 @@ git reset --hard origin/master
 git pull
 chmod +x install.sh
 
-sudo apt-get update
-sudo apt-get install -y git libjpeg-dev dialog
+dialog --title "Script installazione JammaPi" --msgbox "Attenzione verranno ora installati i driver per il corretto funzionamento della Jammapi.
+\n \nSe stai usando un immagine custom, non scaricata da retropie.org.uk, accertati di aver disattivato tutti gli script che usano i GPIO.
+\n \nTerminata l'installazione ti verrà chiesto che uscita video abilitare! " 14 60
+
 lsmod | grep 'joypi' > /dev/null 2>&1
   if [ $? -eq 0 ] ; then
   	echo "Kernel ok!"
