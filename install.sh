@@ -12,6 +12,7 @@ cd ~/JammaPi
 git reset --hard origin/master
 git pull
 chmod +x install.sh
+test -d "~/JammaPi" && echo Exists || echo Does not exist; break
 
 dialog --title "Script installazione JammaPi" --msgbox "Attenzione verranno ora installati i driver per il corretto funzionamento della Jammapi.
 \n \nSe stai usando un immagine custom, non scaricata da retropie.org.uk, accertati di aver disattivato tutti gli script che usano i GPIO.
