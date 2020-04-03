@@ -10,6 +10,12 @@ dialog --title "Script installazione JammaPi" --msgbox "Attenzione verranno ora 
 \n \nTerminata l'installazione ti verrà chiesto che uscita video abilitare! " 14 60
 
 cd ~
+git clone https://github.com/vince87/JammaPi.git
+cd ~/JammaPi
+git reset --hard origin/master
+git pull
+chmod +x install.sh
+
 sudo apt-get update
 sudo apt-get install -y git libjpeg-dev dialog
 lsmod | grep 'joypi' > /dev/null 2>&1
@@ -21,11 +27,6 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 	wget https://project-downloads.drogon.net/wiringpi-latest.deb
 	sudo dpkg -i wiringpi-latest.deb
   fi
-git clone https://github.com/vince87/JammaPi.git
-cd ~/JammaPi
-git reset --hard origin/master
-git pull
-chmod +x install.sh
 
 ##install jammapi overlay
 	cd ~/JammaPi
