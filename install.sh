@@ -176,7 +176,8 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 
 		
   ##Choice of video output
-  		bash ~/JammaPi/script/jammapi_version.sh
+  		#bash ~/JammaPi/script/jammapi_version.sh
+		cp ~/JammaPi/script/jammapi_old.sh ~/JammaPi/script/jammapi.sh
 		chmod u+x ~/JammaPi/script/jammapi.sh
 		bash ~/JammaPi/script/switchvideo.sh 1
 		
