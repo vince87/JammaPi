@@ -20,6 +20,7 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1) bash /home/pi/JammaPi/script/pixelperfect.sh -runc-on ;;
-        2) bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off ;;
+        2) bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
+           bash /home/pi/JammaPi/script/pixelperfect.sh -off;;
 esac
 bash ~/JammaPi/script/menu.sh
