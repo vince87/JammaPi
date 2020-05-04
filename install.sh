@@ -141,6 +141,8 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 	#cd ~/JammaPi/themes
 	cd /etc/emulationstation/themes/
 	sudo git clone https://github.com/ehettervik/es-theme-pixel.git
+	cd /etc/emulationstation/themes/
+	sudo git clone https://github.com/AndreaMav/es-theme-arcade-crt.git
 	sleep 2
 
   ##install retropie resolution switch
@@ -180,6 +182,11 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 		cp ~/JammaPi/script/jammapi_old.sh ~/JammaPi/script/jammapi.sh
 		chmod u+x ~/JammaPi/script/jammapi.sh
 		bash ~/JammaPi/script/switchvideo.sh 1
+		sudo grep 'Pi 4' /proc/device-tree/model > /dev/null 2>&1 
+		if [ $? -eq 0 ] ; then
+        		bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
+           		bash /home/pi/JammaPi/script/pixelperfect.sh -off
+		fi
 		
     		printf "\033[0;32m !!!INSTALLAZIONE COMPLETATA!!! \033[0m\n"
 		printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
