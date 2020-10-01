@@ -109,7 +109,6 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 ##install jammapi service and script script
 	chmod u+x ~/JammaPi/script/pixelperfect.sh
 	chmod u+x ~/JammaPi/script/interfaccia.sh
-	mv ~/JammaPi/script/jammapi-old.sh ~/JammaPi/script/jammapi.sh
 	chmod u+x ~/JammaPi/script/jammapi.sh
 	sudo ln -s /home/pi/JammaPi/services/jammapi.service /etc/systemd/system/jammapi.service
 	sudo ln -s /home/pi/JammaPi/services/jammapi_joystick.service /etc/systemd/system/jammapi_joystick.service
