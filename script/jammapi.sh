@@ -31,26 +31,15 @@
 	exit
 	fi
 	
-current=99
-sudo grep '#CRT' /boot/config.txt > /dev/null 2>&1
-  if [ $? -eq 0 ] ; then
-    current=0
-  fi
-sudo grep '#VGA' /boot/config.txt > /dev/null 2>&1
-  if [ $? -eq 0 ] ; then
-    current=1
-  fi
-sudo grep '#HDMI' /boot/config.txt > /dev/null 2>&1
-  if [ $? -eq 0 ] ; then
-    current=2
-  fi
-
 plex1=$(gpio read 14)
 plex2=$(gpio read 12)
 
 if [ $plex1 = 0 ] && [ $plex2 = 0 ]; then
   echo "JAMMA/SCART"
-  if [ $current != 0 ]; then
+  sudo grep '#CRT' /boot/config.txt > /dev/null 2>&1
+  if [ $? -eq 0 ] ; then
+    echo "Ok!"
+  else
     bash /home/pi/JammaPi/script/interfaccia.sh -JAMMA
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
@@ -61,7 +50,10 @@ fi
 
 if [ $plex1 = 0 ] && [ $plex2 = 1 ]; then
   echo "VGA"
-  if [ $current != 1 ]; then
+  sudo grep '#VGA' /boot/config.txt > /dev/null 2>&1
+  if [ $? -eq 0 ] ; then
+    echo "Ok!"
+  else
     bash /home/pi/JammaPi/script/interfaccia.sh -VGA
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
@@ -73,7 +65,10 @@ fi
 if [ $plex1 = 1 ] && [ $plex2 = 0 ]
 then
   echo "HDMI"
-  if [ $current != 2 ]; then
+    sudo grep '#HDMI' /boot/config.txt > /dev/null 2>&1
+  if [ $? -eq 0 ] ; then
+    echo "Ok!"
+  else
     bash /home/pi/JammaPi/script/interfaccia.sh -HDMI
     printf "\033[0;32m !!!SWITCH COMPLETATO!!! \033[0m\n"
     printf "\033[0;32m     !!!RIAVVIO IN CORSO!!! \033[0m\n"
