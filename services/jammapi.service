@@ -6,6 +6,5 @@ After=network.target
 User=pi
 Type=simple
 ExecStart=/home/pi/JammaPi/script/jammapi.sh
-#ExecStart=/home/pi/JammaPi/script/jammapi.sh 2>&1 >> /home/pi/JammaPi/jammapi.log
 [Install]
 WantedBy=multi-user.target
