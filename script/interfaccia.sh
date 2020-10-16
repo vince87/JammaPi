@@ -35,7 +35,7 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/#dtoverlay=audremap,pins_18_19/dtoverlay=audremap,pins_18_19/g' /boot/config.txt
 			sudo perl -p -i -e 's/#disable_audio_dither=1/disable_audio_dither=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#audio_pwm_mode/audio_pwm_mode/g' /boot/config.txt
-			sudo perl -p -i -e 's/#dtoverlay=vga666-6/dtoverlay=vga666-6/g' /boot/config.txt
+			sudo perl -p -i -e 's/#dtoverlay=vga666/dtoverlay=vga666/g' /boot/config.txt
 			sudo perl -p -i -e 's/#enable_dpi_lcd=1/enable_dpi_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#display_default_lcd=1/display_default_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#dpi_output_format=6/dpi_output_format=6/g' /boot/config.txt
@@ -60,7 +60,7 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/dtoverlay=audremap,pins_18_19/#dtoverlay=audremap,pins_18_19/g' /boot/config.txt
 			sudo perl -p -i -e 's/disable_audio_dither=1/#disable_audio_dither=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/audio_pwm_mode/#audio_pwm_mode/g' /boot/config.txt
-			sudo perl -p -i -e 's/dtoverlay=vga666-6/#dtoverlay=vga666-6/g' /boot/config.txt
+			sudo perl -p -i -e 's/dtoverlay=vga666/#dtoverlay=vga666/g' /boot/config.txt
 			sudo perl -p -i -e 's/enable_dpi_lcd=1/#enable_dpi_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/display_default_lcd=1/#display_default_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/dpi_output_format=6/#dpi_output_format=6/g' /boot/config.txt
@@ -81,7 +81,7 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/#dtoverlay=audremap,pins_18_19/dtoverlay=audremap,pins_18_19/g' /boot/config.txt
 			sudo perl -p -i -e 's/#disable_audio_dither=1/disable_audio_dither=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#audio_pwm_mode/audio_pwm_mode/g' /boot/config.txt
-			sudo perl -p -i -e 's/#dtoverlay=vga666-6/dtoverlay=vga666-6/g' /boot/config.txt
+			sudo perl -p -i -e 's/#dtoverlay=vga666/dtoverlay=vga666/g' /boot/config.txt
 			sudo perl -p -i -e 's/#enable_dpi_lcd=1/enable_dpi_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#display_default_lcd=1/display_default_lcd=1/g' /boot/config.txt
 			sudo perl -p -i -e 's/#dpi_output_format=6/dpi_output_format=6/g' /boot/config.txt
