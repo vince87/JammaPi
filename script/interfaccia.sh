@@ -44,7 +44,7 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/#dpi_mode=9/dpi_mode=9/g' /boot/config.txt
 			sudo perl -p -i -e 's/dpi_mode=87/dpi_mode=9/g' /boot/config.txt
 			sudo grep '#hdmi_timings' /boot/config.txt > /dev/null 2>&1
-			if [ $? eq 0 ] ; then
+			if [ $? == 0 ] ; then
 			sudo perl -p -i -e 's/hdmi_timings=/#hdmi_timings=/g' /boot/config.txt
 			fi
 			bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
@@ -66,7 +66,7 @@ while [ "$1" != "" ]; do
 			sudo perl -p -i -e 's/dpi_output_format=6/#dpi_output_format=6/g' /boot/config.txt
 			sudo perl -p -i -e 's/dpi_group=2/#dpi_group=2/g' /boot/config.txt
 			sudo perl -p -i -e 's/dpi_mode/#dpi_mode/g' /boot/config.txt
-			if [ $? eq 0 ] ; then
+			if [ $? == 0 ] ; then
 			sudo perl -p -i -e 's/hdmi_timings=/#hdmi_timings=/g' /boot/config.txt
 			fi
 			bash /home/pi/JammaPi/script/pixelperfect.sh -runc-off
