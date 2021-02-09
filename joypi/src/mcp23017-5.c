@@ -54,7 +54,7 @@ struct MCP23017 *mcp23017_init(void)
 	if(m) {
 		m->adapter = i2c_get_adapter(0);
 		for(i = 0; i < MAX_MCP23017_CLIENTS; ++i) {
-			m->client[i] = i2c_new_dummy(m->adapter, 0x20 + i);
+			m->client[i] = i2c_new_dummy_device(m->adapter, 0x20 + i);
 		}
 	}
 
