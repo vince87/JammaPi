@@ -95,6 +95,14 @@ lsmod | grep 'joypi' > /dev/null 2>&1
 	sudo sh -c "echo 'i2c-dev' >> /etc/modules"
 	cd ~/JammaPi/joypi/
 	make clean
+	if [ "$(gcc --version | head -n1 | cut -d" " -f4)" -lt 5.0.0 ]; then
+           echo "Less than 5.0.0"
+        else
+	   echo "Greater than 5.0.0"
+           cd ~/JammaPi/joypi/src/
+	   rm mcp23017.c
+	   mv mcp23017-5.c mcp23017.c
+        fi
 	make
 	sudo make install
 	sudo insmod joypi.ko
