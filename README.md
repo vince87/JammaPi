@@ -11,7 +11,7 @@ Utile per chi non ha esperienza nel mondo linux e ha la necessità di cambiare i
   
   Immagini preconfigurate a 15khz:
   - [Pi3 - Retropie CRT Edition](https://github.com/krahsdevil/Retropie-CRT-Edition) - (Selezionare RGB-Pi al primo avvio)
-  - [Pi4 - Frankie 1.6F](https://drive.google.com/file/d/1Hv_JXZ9BBGb_-UnQo6wj3YiphPaTAOmb/view?usp=sharing)
+  - [Pi4 - Frankie 1.6F](https://drive.google.com/file/d/1Hv_JXZ9BBGb_-UnQo6wj3YiphPaTAOmb/view?usp=sharing) - (Versione modificata di retropie con pixel perfect)
   
 
   Guide:
